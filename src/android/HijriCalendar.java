@@ -40,7 +40,6 @@ public class HijriCalendar extends CordovaPlugin implements HijriDatePickerDialo
 
     @Override
     public void onDateSet(HijriDatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        String date = "You picked the following date: " + dayOfMonth + "/" + (++monthOfYear) + "/" + year;
-        this.callbackContext.success(date);
+        this.callbackContext.success(dayOfMonth + "/" + (++monthOfYear) + "/" + year);
     }
 }
