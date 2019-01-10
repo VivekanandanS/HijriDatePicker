@@ -61,12 +61,12 @@
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-        <feature name="HijriCalendar">
-            <param name="ios-package" value="HijriCalendar"/>
+        <feature name="DatePicker">
+            <param name="ios-package" value="DatePicker"/>
         </feature>
         </config-file>
 
-        <js-module src="www/ios/hijri.js" name="HijriCalendar">
+        <js-module src="www/ios/hijri.js" name="DatePicker">
              <clobbers target="window.hijri" />
         </js-module>
 
