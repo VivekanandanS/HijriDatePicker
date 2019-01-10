@@ -1,0 +1,25 @@
+{
+  "name": "hijridateicker",
+  "version": "1.0.0",
+  "description": "Hijri Date Picker for Android and IOS",
+  "cordova": {
+    "id": "cordova-hiriji-calendar",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VivekanandanS/HijriDatePicker.git"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Vivekanandan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VivekanandanS/HijriDatePicker/issues"
+  },
+  "homepage": "https://github.com/VivekanandanS/HijriDatePicker#readme"
+}
