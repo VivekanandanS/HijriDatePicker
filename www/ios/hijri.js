@@ -15,7 +15,8 @@ var exec = require('cordova/exec');
  * Constructor
  */
 function DatePicker() {
-    this._callback;
+    this.success;
+    this.error;
 }
 
 /**
@@ -33,7 +34,7 @@ DatePicker.prototype.ANDROID_THEMES = {
 /**
  * show - true to show the ad, false to hide the ad
  */
-DatePicker.prototype.show = function(options, cb) {
+DatePicker.prototype.show = function(s,e) {
     var padDate = function(date) {
       if (date.length == 1) {
         return ("0" + date);
@@ -100,7 +101,8 @@ DatePicker.prototype.show = function(options, cb) {
         if (typeof options[key] !== "undefined")
             defaults[key] = options[key];
     }
-    this._callback = cb;
+    this.success = s;
+    this.success = e;
 
     exec(null,
       null,
@@ -112,13 +114,13 @@ DatePicker.prototype.show = function(options, cb) {
 
 DatePicker.prototype._dateSelected = function(date) {
     var d = new Date(parseFloat(date) * 1000);
-    if (this._callback)
-        this._callback(d);
+    if (this.success)
+        this.success(d);
 };
 
 DatePicker.prototype._dateSelectionCanceled = function() {
-    if (this._callback)
-        this._callback();
+    if (this.error)
+        this.error();
 };
 
 DatePicker.prototype._UIPopoverArrowDirection = {
