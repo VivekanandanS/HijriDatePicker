@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-hiriji-calendar" version="1.0.0">
+   <name>cordova-hiriji-calendar</name>
+   <js-module name="cordova-hiriji-calendar" src="www/cordova-hiriji-calendar.js">
+      <clobbers target="cordova.plugins.cordova-hiriji-calendar" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="cordova-hiriji-calendar">
+            <param name="android-package" value="cordova-hiriji-calendar.cordova-hiriji-calendar" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/cordova-hiriji-calendar.java" target-dir="src/cordova-hiriji-calendar/cordova-hiriji-calendar" />
+   </platform>
+   <platform name="ios">
+      <config-file parent="/*" target="config.xml">
+         <feature name="cordova-hiriji-calendar">
+            <param name="ios-package" value="cordova-hiriji-calendar" />
+         </feature>
+      </config-file>
+      <source-file src="src/ios/cordova-hiriji-calendar.m" />
+   </platform>
+</plugin>
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-hiriji-calendar"
+    version="1.0.0">
+
+    <name>cordova-hiriji-calendar</name>
+
+    <description>Cordova/PhoneGap Hijri DatePicker Plugin for iOS, Android</description>
+
+    <license>MIT</license>
+
+    <keywords>cordova,phonegap,datepicker,android,ios,ios7,ios8,wp</keywords>
+
+    <repo>https://github.com/VivekanandanS/HijriDatePicker.git</repo>
+
+    <!-- android -->
+    <platform name="android">
+       <framework src="net.alhazmy13.hijridatepicker:library:2.0.2" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="HijriCalendar">
+                <param name="android-package" value="com.bionworks.hirjicalendar.HijriCalendar"/>
+            </feature>
+        </config-file>
+
+        <js-module src="www/android/hijri.js" name="HijriCalendar">
+             <clobbers target="window.hijri" />
+        </js-module>
+
+        <source-file src="src/android/HijriCalendar.java" target-dir="src/com/bionworks/hirjicalendar" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+        <feature name="HijriCalendar">
+            <param name="ios-package" value="HijriCalendar"/>
+        </feature>
+        </config-file>
+
+        <js-module src="www/ios/hijri.js" name="HijriCalendar">
+             <clobbers target="window.hijri" />
+        </js-module>
+
+        <header-file src="src/ios/DatePicker.h" />
+        <source-file src="src/ios/DatePicker.m" />
+        <resource-file src="src/ios/DatePicker.xib" />
+    </platform>
+
+
+</plugin>
