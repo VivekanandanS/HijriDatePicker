@@ -1,3 +1,5 @@
+var exec = require('cordova/exec');
 exports.show = function (success, error) {
-    exec(success, error, 'hirijicalendar', 'show');
+    console.log('Showing cAledndar');
+    exec(success, error, 'hirijicalendar', 'show',[]);
 };
